@@ -8,7 +8,7 @@ TwoDList := Object clone do (
     )
 
     dim := method(x,y,
-        for (i,1,y,
+        for (i,0,y-1,
             self lists append (List clone setSize(x))
         )
     )
@@ -21,11 +21,26 @@ TwoDList := Object clone do (
         return self lists at(y) at(x)
     )
 
+    transposed := method(
+        trans_list := TwoDList clone
+        y := self lists size()
+        x := self lists at(0) size()
+        trans_list dim(y,x)
+        for (i,0,x-1,
+            for (j,0,y-1,
+                trans_list set(j,i,self get(i,j))
+            )
+
+        )
+        return trans_list
+    )
 
 )
 
 mylist := TwoDList clone
-mylist dim(3,3)
-mylist set(2,2,10)
-mylist get(2,2) println
+mylist dim(3,2)
+mylist set(1,1,10)
+mylist get(1,1) println
 mylist lists println
+mylist transposed lists println
+(mylist get(0,1) == mylist transposed get (1,0)) println
