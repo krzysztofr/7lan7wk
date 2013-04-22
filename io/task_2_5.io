@@ -21,6 +21,9 @@ TwoDList := Object clone do (
         return self lists at(y) at(x)
     )
 
+    # Bonus: write a transpose method so that (new_matrix get(y,x)) ==
+    # matrix get(x,y) on the original list.
+
     transposed := method(
         trans_list := TwoDList clone
         y := self lists size()
