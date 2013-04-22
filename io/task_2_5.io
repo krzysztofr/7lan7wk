@@ -21,7 +21,7 @@ TwoDList := Object clone do (
         return self lists at(y) at(x)
     )
 
-    # Bonus: write a transpose method so that (new_matrix get(y,x)) ==
+    # (2.6) Bonus: write a transpose method so that (new_matrix get(y,x)) ==
     # matrix get(x,y) on the original list.
 
     transposed := method(
@@ -38,6 +38,17 @@ TwoDList := Object clone do (
         return trans_list
     )
 
+    # (2.7) Write the matrix to a file and read a matrix from a file.
+
+    saveToFile := method(filename,
+        File with(filename) open write(self serialized) close
+    )
+
+    readFromFile := method(filename,
+        TwoDList doRelativeFile(filename)
+
+    )
+
 )
 
 mylist := TwoDList clone
@@ -47,3 +58,5 @@ mylist get(1,1) println
 mylist lists println
 mylist transposed lists println
 (mylist get(0,1) == mylist transposed get (1,0)) println
+mylist saveToFile("matrix.txt")
+mylist doRelativeFile("matrix.txt") println
