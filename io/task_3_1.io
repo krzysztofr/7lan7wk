@@ -1,4 +1,8 @@
-# Enchance the XML program to add spaces to show the indentation structure.
+# (3.1) Enhance the XML program to add spaces to show the indentation structure.
+#
+# (3.3) Enhance the XML program to handle attributes: if the first argument
+# is a map (use the curly brackets syntax), add attributes to the XML program.
+# For example: book({"author" : "Tate"}) would print <book author="Tate">.
 
 write_spaces := method(num,
     if (num > 0, for (i, 1, num, write("  ")))
@@ -30,5 +34,6 @@ Builder forward := method(
 Builder ul(
     li("Io"),
     li("Lua"),
-    li("JavaScript")
+    li("JavaScript"),
+    a()
 )
