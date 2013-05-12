@@ -1,9 +1,21 @@
 % Reverse the elements of a list.
 
-rev([],[]).
-rev(List,List) :- L=1, length(List, L).
-rev([Head|Tail], Result) :- append(Rem, [Head], Result), rev(Tail, Rem).
+% naive
+revn([],[]).
+revn(List,List) :- L=1, length(List, L).
+revn([Head|Tail], Result) :- append(Rem, [Head], Result), rev(Tail, Rem).
 
 % to test, run:
-% rev([1,2,3,4], R).
-% rev(R, [1,2,3,4]).
+% revn([1,2,3,4], R).
+% revn(R, [1,2,3,4]).
+
+% accumulating parameter
+revr([], B, B).
+revr([Head|Tail], Z, R) :- revr(Tail, [Head|Z], R).
+revr(A, Result) :- revr(A, [], Result).
+
+% to test, run:
+% revr([1,2,3,4], R).
+% revr(R, [1,2,3,4]).
+
+
