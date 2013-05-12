@@ -7,3 +7,4 @@ My code for "Seven Languages in Seven Weeks" book.
 ### Prolog
 
 * Useful command in the interpreter: `trace` - every command is processed step by step, with values printed to the output.
+* Sorting algorithms in Prolog: [Guide to Prolog Programming](http://kti.mff.cuni.cz/~bartak/prolog/sorting.html)
