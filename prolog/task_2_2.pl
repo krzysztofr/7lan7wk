@@ -4,7 +4,7 @@ max(A,B,R) :- A>B, R is A.
 max(A,B,R) :- A=<B, R is B.
 
 % one element list
-maxlist([Head|Tail], R) :- length(Tail, L), L=0, R=Head.
+maxlist([One], One).
 
 maxlist([Head|Tail], R) :- maxlist(Tail, R1), max(R1, Head, R).
 
@@ -15,7 +15,7 @@ min(A,B,R) :- A>B, R is B.
 min(A,B,R) :- A=<B, R is A.
 
 % one element list
-minlist([Head|Tail], R) :- length(Tail, L), L=0, R=Head.
+minlist([One], One).
 
 minlist([Head|Tail], R) :- minlist(Tail, R1), min(R1, Head, R).
 

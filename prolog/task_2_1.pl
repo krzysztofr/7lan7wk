@@ -2,8 +2,8 @@
 
 % naive
 revn([],[]).
-revn(List,List) :- L=1, length(List, L).
-revn([Head|Tail], Result) :- append(Rem, [Head], Result), rev(Tail, Rem).
+revn([One],[One]).
+revn([Head|Tail], Result) :- append(Rem, [Head], Result), revn(Tail, Rem).
 
 % to test, run:
 % revn([1,2,3,4], R).
