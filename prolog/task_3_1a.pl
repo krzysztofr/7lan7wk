@@ -45,6 +45,9 @@ sudoku(Puzzle, Solution) :-
 
         valid([Row1, Row2, Row3, Row4, Row5, Row6,
                Col1, Col2, Col3, Col4, Col5, Col6,
-               Square1, Square2, Square3, Square4, Square5, Square6]).
-        
+               Square1, Square2, Square3, Square4, Square5, Square6]),
+               
+        my_print([Row1, Row2, Row3, Row4, Row5, Row6]).
+
+my_print([Head | Tail]) :- print(Head), nl, my_print(Tail).
 
