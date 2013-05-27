@@ -1,3 +1,6 @@
 *.swp
 book-code
 io/matrix.txt
+scala/scalatest*.jar
+scala/runtime
+scala/pro
