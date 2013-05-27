@@ -26,3 +26,4 @@ My code for "Seven Languages in Seven Weeks" book.
     * run: `scalac -cp scalatest_2.9.0-1.9.1.jar task_1_1*.scala` (insert proper ScalaTest jar file name)
     * the code is compiled
     * you can run it: `scala -cp scalatest_2.9.0-1.9.1.jar -cp . pro.rakowski.scala.task_1_1.runtime.Main`
+    * you can run tests by using: `scala -cp scalatest_2.9.0-1.9.1.jar org.scalatest.run pro.rakowski.scala.task_1_1.tests.TestSuite`
