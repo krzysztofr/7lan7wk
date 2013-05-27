@@ -16,6 +16,7 @@ My code for "Seven Languages in Seven Weeks" book.
 ### Scala
 
 * [Scala API](http://www.scala-lang.org/api/current/index.html#package)
+* [Scala style guide](http://docs.scala-lang.org/style/)
 
 #### Task 1.1 (Tic Tac Toe)
 
@@ -24,4 +25,4 @@ My code for "Seven Languages in Seven Weeks" book.
     * get ScalaTest from [ScalaTest website](http://www.scalatest.org/download)
     * run: `scalac -cp scalatest_2.9.0-1.9.1.jar task_1_1*.scala` (insert proper ScalaTest jar file name)
     * the code is compiled
-    * you can run it: `scala -cp scalatest_2.9.0-1.9.1.jar -cp . task_1_1.runtime.Task_1_1_Main`
+    * you can run it: `scala -cp scalatest_2.9.0-1.9.1.jar -cp . pro.rakowski.scala.task_1_1.runtime.Main`

@@ -4,7 +4,7 @@ and detect the winner or whether there is a tie or no winner yey. Use classes
 where appropriate.
 */
 
-package pro.rakowski.TicTacToe
+package pro.rakowski.scala.task_1_1.TicTacToe
 
 class TicTacToe(board_setup: String) {
     var row = 0;

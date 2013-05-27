@@ -1,7 +1,7 @@
-package task_1_1.tests
+package pro.rakowski.scala.task_1_1.tests
 
 import org.scalatest.FunSuite
-import pro.rakowski.TicTacToe.TicTacToe
+import pro.rakowski.scala.task_1_1.TicTacToe.TicTacToe
 
 class ExampleSuite extends FunSuite {
 

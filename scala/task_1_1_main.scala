@@ -1,8 +1,8 @@
-package task_1_1.runtime
+package pro.rakowski.scala.task_1_1.runtime
 
-import pro.rakowski.TicTacToe.TicTacToe
+import pro.rakowski.scala.task_1_1.TicTacToe.TicTacToe
 
-object Task_1_1_Main extends App {
+object Main extends App {
     var ttt = new TicTacToe("XOXOOEXOX");
     ttt.print_board();
     println(ttt.result());
