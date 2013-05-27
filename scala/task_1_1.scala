@@ -4,7 +4,9 @@ and detect the winner or whether there is a tie or no winner yey. Use classes
 where appropriate.
 */
 
-class TicTacToeBoard(board_setup: String) {
+package pro.rakowski.TicTacToe
+
+class TicTacToe(board_setup: String) {
     var row = 0;
     var col = 0;
    
@@ -84,6 +86,6 @@ class TicTacToeBoard(board_setup: String) {
 
 }
 
-var ttt = new TicTacToeBoard("XOXOOEXOX");
-ttt.print_board();
-println(ttt.result());
+//var ttt = new TicTacToe("XOXOOEXOX");
+//ttt.print_board();
+//println(ttt.result());
