@@ -6,7 +6,7 @@ My code for "Seven Languages in Seven Weeks" book.
 
 ### Io
 
-* [Language reference](http://iolanguage.org/scm/io/docs/reference/}
+* [Language reference](http://iolanguage.org/scm/io/docs/reference/)
 
 ### Prolog
 
