@@ -6,11 +6,35 @@ their alternatives.
 
 TODO: make the replacement case insensitive
 
+Task 2.3:
+Load the curse words and alternatives from a file.
+
+File syntax:
+word1,replacement1
+word2,replacement2
+...
+
 */
 
+import scala.io.Source
 
 trait Censor {
-    val replace_map = Map("shoot" -> "pucky", "darn" -> "beans")
+    //val replace_map = Map("shoot" -> "pucky", "darn" -> "beans")
+
+    var replace_map = Map[String,String]()
+    
+
+    def load_from_file(filename:String) = {
+
+        var pair = Array[String]()
+
+        Source.fromFile(filename).getLines.foreach { line =>
+            pair = line.split(",")
+           
+            replace_map = replace_map + ((pair(0), pair(1)))
+        }
+
+    }
 
     def replace(input:String):String = {
 
@@ -29,4 +53,5 @@ class MyMessage(message:String) extends Censor {
 }
 
 val mm = new MyMessage("you piece of shoot, god darn it")
+mm.load_from_file("curse_words.txt")
 println(mm.get_message())
