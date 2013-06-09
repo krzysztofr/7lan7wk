@@ -27,3 +27,11 @@ My code for "Seven Languages in Seven Weeks" book.
     * the code is compiled
     * you can run it: `scala -cp scalatest_2.9.0-1.9.1.jar -cp . pro.rakowski.scala.task_1_1.runtime.Main`
     * you can run tests by using: `scala -cp scalatest_2.9.0-1.9.1.jar org.scalatest.run pro.rakowski.scala.task_1_1.tests.TestSuite`
+
+#### sizer.scala
+
+Original sizer.scala program throws `java.nio.charset.MalformedInputException` when the downloaded page is in different encoding that system default. To avoid this, modify line:
+`def getPageSize(url : String) = Source.fromURL(url).mkString.length`
+to
+`def getPageSize(url : String) = Source.fromURL(url)(io.Codec("ISO-8859-1")).mkString.length`
+because all of the sites are returned with ISO-8859-1 encoding. This is of course dirty workaround - proper solution would be to use encoding based on the Content-Type header.
