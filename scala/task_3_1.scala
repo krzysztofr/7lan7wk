@@ -1,12 +1,22 @@
+/*
+Take the sizer application and add a message to count the number of links on
+the page.
+*/
+
 import scala.io._
 import scala.actors._
 import Actor._
+import scala.util.matching.Regex
+
 
 // START:loader
 object PageLoader {
-    def getPageStats(url : String):Int = {
+
+    val pattern = new Regex("<a.*?href=.*?>")
+
+    def getPageStats(url : String):(Int,Int) = {
         val page = Source.fromURL(url)(io.Codec("ISO-8859-1")).mkString
-        return page.length
+        return (page.length, (pattern findAllIn page).size)
     }
 }
 // END:loader
@@ -28,7 +38,8 @@ def timeMethod(method: () => Unit) = {
 // START:sequential
 def getPageStatsSequentially() = {
  for(url <- urls) {
-   println("Size for " + url + ": " + PageLoader.getPageStats(url))
+   val pageStats = PageLoader.getPageStats(url)
+   println("Size for " + url + ": " + pageStats._1 + "; links: " + pageStats._2)            
  }
 }
 // END:sequential
@@ -38,13 +49,14 @@ def getPageStatsConcurrently() = {
  val caller = self
 
  for(url <- urls) {
-   actor { caller ! (url, PageLoader.getPageStats(url)) }
+   val pageStats = PageLoader.getPageStats(url)
+   actor { caller ! (url, pageStats._1, pageStats._2) }
  }
 
  for(i <- 1 to urls.size) {
    receive {
-     case (url, size) =>
-       println("Size for " + url + ": " + size)            
+     case (url, size, links) =>
+       println("Size for " + url + ": " + size + "; links: " + links)            
    }
  }
 }
