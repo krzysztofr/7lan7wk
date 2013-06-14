@@ -35,3 +35,8 @@ Original sizer.scala program throws `java.nio.charset.MalformedInputException` w
 to
 `def getPageSize(url : String) = Source.fromURL(url)(io.Codec("ISO-8859-1")).mkString.length`
 because all of the sites are returned with ISO-8859-1 encoding. This is of course dirty workaround - proper solution would be to use encoding based on the Content-Type header.
+
+### Erlang
+
+* [Erlang documentation](http://www.erlang.org/doc/)
+* [Erlang OTP tutorial](http://blog.bot.co.za/en/article/349/an-erlang-otp-tutorial-for-beginners)
