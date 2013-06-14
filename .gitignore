@@ -3,3 +3,4 @@ book-code
 io/matrix.txt
 scala/scalatest*.jar
 scala/pro
+*.beam
