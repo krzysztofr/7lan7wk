@@ -5,7 +5,9 @@
 -module(task_2_1).
 -export([myLang/2]).
 
-myLang(Lang, List) -> lists:nth(1,lists:filter(fun(L) -> L == ruby end, [Lang || {Lang, _} <- List])). 
+
+%...
+
 
 % to test, run:
 % c(task_2_1).
