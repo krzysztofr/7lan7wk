@@ -5,8 +5,9 @@
 -module(task_2_1).
 -export([myLang/2]).
 
+desc([{Name, Description}]) -> Description.
 
-%...
+myLang(Keyword, Mylist) -> desc(lists:filter(fun({Name, Description}) -> Name == Keyword end, Mylist)).
 
 
 % to test, run:
