@@ -41,3 +41,7 @@ because all of the sites are returned with ISO-8859-1 encoding. This is of cours
 * [Erlang documentation](http://www.erlang.org/doc/)
 * [Erlang OTP tutorial](http://blog.bot.co.za/en/article/349/an-erlang-otp-tutorial-for-beginners)
 * [OTP Design Principles User's Guide](http://www.erlang.org/doc/design_principles/users_guide.html)
+
+### Clojure
+
+Call funcitons with, for example: `lein run -m day1.core/foo 3`.
